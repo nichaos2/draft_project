@@ -16,4 +16,5 @@ python manage.py runserver
 python manage.py startapp <the_app>
 python manage.py makemigrations <the_app>
 python manage.py shell
+python manage.py createsuperuser
 ```
