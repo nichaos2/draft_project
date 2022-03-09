@@ -18,3 +18,10 @@ python manage.py makemigrations <the_app>
 python manage.py shell
 python manage.py createsuperuser
 ```
+
+## use the shell
+
+>>> from polls.models import Choice, Question
+>>> from django.utils import timezone
+>>> Question.objects.all()
+etc...
