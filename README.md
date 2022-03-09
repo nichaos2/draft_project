@@ -25,3 +25,19 @@ python manage.py createsuperuser
 >>> from django.utils import timezone
 >>> Question.objects.all()
 etc...
+
+## testing
+
+- conventional unit tests for functions -> could I use pytest
+and 
+- unit tests for views, what response they get
+
+### coverage
+
+```
+coverage run --source='.' manage.py test <myapp>
+```
+This runs your tests and collects coverage data of the executed files in your project. You can see a report of this data by typing following command:
+```
+coverage report
+```
