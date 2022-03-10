@@ -1,18 +1,24 @@
 # First turorial from the documentation
 
-Revision on django from documentation (just copy paste)
-Learn the basics of Rest Django API + swagger
+This is the Polls (Questions/Choices) app from the django from documentation.
+
+The purpose is to revise the basics.
+
+Also I added the basics of Rest Django API + swagger
+
+Try to follow this 2+ hours [tutorial](https://www.youtube.com/watch?v=B38aDwUpcFc&ab_channel=ParwizForogh) on youtube 
 
 ## pipenv
 
 I use the pipenv to manage the packages
 
--- if pipenv does not work do this first
+- if pipenv does not work do this first
 export PATH=$PATH:/home/nioannou/.local/bin/
 
 
 ## commands
 
+Bqsic commands to start the project
 ```
 django-admin startproject <the_project>
 python manage.py runserver
@@ -45,7 +51,7 @@ This runs your tests and collects coverage data of the executed files in your pr
 coverage report
 ```
 
-## Django rest framework
+## Django Rest Framework
 
 1. pipenv install djangorestframework djangorestframework-jsonapi django-filter
 2. add it to settings.py
