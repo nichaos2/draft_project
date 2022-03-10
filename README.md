@@ -49,3 +49,10 @@ coverage report
 3. create serializers for the models
 4. add the views
 5. wire up the API URLs
+
+## API Documentation with swagger
+
+1. install django-rest-swagger pyyaml
+2. in the project Confurls add schema (openapi)
+3. add swagger url
+4. add template in the app/templates folder

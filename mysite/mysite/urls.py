@@ -16,7 +16,36 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+# swagger
+from rest_framework.schemas import get_schema_view
+from django.views.generic import TemplateView
+
 urlpatterns = [
     path("polls/", include("polls.urls")),
     path("admin/", admin.site.urls),
 ]
+
+# swagger
+swagger_urlpatterns = [
+    # schema for api
+    path(
+        "openapi/",
+        get_schema_view(
+            title="Poll Service",
+            description="API for developers who would love to use our service",
+        ),
+        name="openapi-schema",
+    ),
+    # Route TemplateView to serve Swagger UI template.
+    #   * Provide `extra_context` with view name of `SchemaView`.
+    path(
+        "docs/",
+        TemplateView.as_view(
+            template_name="api_docs.html",
+            extra_context={"schema_url": "openapi-schema"},
+        ),
+        name="swagger-ui",
+    ),
+]
+
+urlpatterns += swagger_urlpatterns
