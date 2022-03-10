@@ -1,12 +1,14 @@
 from rest_framework_json_api import serializers
 from .models import Question, Choice
 
+
 class QuestionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Question
-        fields = ('question_text', 'pub_date')
+        fields = ("question_text", "pub_date")
+
 
 class ChoiceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Choice
-        fields = ('choice_text', 'votes', 'question')
+        fields = ("choice_text", "votes", "question")

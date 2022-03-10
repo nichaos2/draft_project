@@ -1,3 +1,4 @@
+# views for the app and the shortcuts
 from django.http import HttpResponse, HttpResponseRedirect
 
 # from django.http import Http404
@@ -7,6 +8,10 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from .models import Choice, Question
+
+# rest
+from rest_framework import viewsets
+from .serializers import QuestionSerializer, ChoiceSerializer
 
 
 # def index(request):
@@ -91,3 +96,16 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
+
+
+# views  return for Django RestAPI
+
+
+class QuestionViewSet(viewsets.ModelViewSet):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
+
+
+class ChoiceViewSet(viewsets.ModelViewSet):
+    queryset = Choice.objects.all()
+    serializer_class = ChoiceSerializer

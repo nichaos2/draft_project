@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import include, path
 
 from . import views
+from rest_framework import routers
 
 app_name = "polls"
 # urlpatterns = [
@@ -22,3 +23,14 @@ urlpatterns = [
     path("<int:pk>/results/", views.ResultsView.as_view(), name="results"),
     path("<int:question_id>/vote/", views.vote, name="vote"),
 ]
+
+# Django Rest API
+router = routers.DefaultRouter()
+router.register(r"questions", views.QuestionViewSet)
+router.register(r"choices", views.ChoiceViewSet)
+
+api_urlpattenrs = [
+    path("api/", include(router.urls)),
+]
+
+urlpatterns += api_urlpattenrs
