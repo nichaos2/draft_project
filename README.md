@@ -41,3 +41,11 @@ This runs your tests and collects coverage data of the executed files in your pr
 ```
 coverage report
 ```
+
+## Django rest framework
+
+1. pipenv install djangorestframework djangorestframework-jsonapi django-filter
+2. add it to settings.py
+3. create serializers for the models
+4. add the views
+5. wire up the API URLs
