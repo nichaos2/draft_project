@@ -1,10 +1,13 @@
 # First turorial from the documentation
 
-(revision on django - just copy paste)
+Revision on django from documentation (just copy paste)
+Learn the basics of Rest Django API + swagger
 
 ## pipenv
 
-if pipenv does not work do this first
+I use the pipenv to manage the packages
+
+-- if pipenv does not work do this first
 export PATH=$PATH:/home/nioannou/.local/bin/
 
 
@@ -50,7 +53,7 @@ coverage report
 4. add the views
 5. wire up the API URLs
 
-## API Documentation with swagger
+## API Documentation with swagger and openapi schema
 
 1. install django-rest-swagger pyyaml
 2. in the project Confurls add schema (openapi)
