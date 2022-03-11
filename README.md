@@ -65,3 +65,31 @@ coverage report
 2. in the project Confurls add schema (openapi)
 3. add swagger url
 4. add template in the app/templates folder
+
+## API Documentation with drf-yasg - This is the best
+Thi library has both swagger and redoc and also recovers nested api urls
+1. install drf-yasg
+2. add it in the settings
+3. add the [code](https://github.com/axnsan12/drf-yasg/#quickstart) in the url.py
+(do not forget to import the *re_path*)
+```python
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Snippets API",
+      default_version='v1',
+      description="Test description",
+      terms_of_service="https://www.google.com/policies/terms/",
+      contact=openapi.Contact(email="contact@snippets.local"),
+      license=openapi.License(name="BSD License"),
+   ),
+   public=True,
+   permission_classes=[permissions.AllowAny],
+)
+
+drf_yasg_urlpatterns = [
+   re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+   re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+   re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+]
+```
+4. no templates needed

@@ -9,8 +9,6 @@ black = "==21.7b0"
 djangorestframework = "*"
 djangorestframework-jsonapi = "*"
 django-filter = "*"
-django-rest-swagger = "*"
-pyyaml = "*"
 drf-yasg = "*"
 
 [dev-packages]
